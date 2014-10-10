@@ -133,7 +133,7 @@ files: {
 
 ##### options ```object```
 
-###### path ```string```
+###### path ```string``` or ```Function```
 
 The path on the remote server. Defaults to home.
 
@@ -206,7 +206,7 @@ options will be ignored. Each is described a bit more below.
 
 A string containing the contents of the private key to use to authenticate with the remote system, you can load this from a file using ```grunt.file.read```. Be careful you don't put this into source control unless you mean it!
 
-If a privateKey and passphrase are required, they 
+If a privateKey and passphrase are required, they
 
 ```js
 options: {
@@ -235,7 +235,7 @@ options: {
          agent: process.env.SSH_AUTH_SOCK
 }
 ```
-If you use ```jshint```, remember to add ```process: true``` in ```globals``` 
+If you use ```jshint```, remember to add ```process: true``` in ```globals```
 
 ###### readyTimeout ```integer```
 
@@ -320,7 +320,7 @@ options: {
 }
 ```
 
-If you use ```jshint```, remember to add ```process: true``` in ```globals``` 
+If you use ```jshint```, remember to add ```process: true``` in ```globals```
 
 ###### readyTimeout ```integer```
 
