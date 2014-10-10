@@ -63,6 +63,11 @@ module.exports = function (grunt) {
     setOption('passphrase');
     setOption('showProgress');
 
+    // Allow path option to be a function
+    if (typeof options.path === 'function') {
+        options.path = options.path();
+    }
+
     // add trailing slash to path if needed
     if (('' !== options.path) && !options.path.match(/(\/|\\)$/)) {
       options.path = options.path + '/';
@@ -100,7 +105,7 @@ module.exports = function (grunt) {
           var fileQueue = [];
           var functionQueue = [];
           var paths = [];
-          
+
           if (options.mode === 'download') {
             if (srcFiles.length === 0) {
               return callback(new Error('Unable to copy; no valid remote files were found.'));
